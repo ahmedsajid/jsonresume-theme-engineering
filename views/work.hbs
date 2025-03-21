@@ -4,12 +4,14 @@
     {{#each resume.work}}
         {{#> item title=(getValueIfDiffFromPrevious @root.resume.work @index "company") subtitle=position location=location startDate=startDate endDate=endDate startDate2=startDate2 endDate2=endDate2}}
         {{#if summary}}
-        <div class="summary">{{paragraphSplit summary}}</div>
+        <div class="summary">
+            <p>{{summary}}</p>
+        </div>
         {{/if}}
         {{#if highlights.length}}
         <ul class="highlights">
             {{#each highlights}}
-            <li>{{.}}</li>
+            <li>{{{.}}}</li>
             {{/each}}
         </ul>
         {{/if}}
